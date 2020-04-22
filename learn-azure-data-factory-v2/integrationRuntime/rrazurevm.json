@@ -1,0 +1,6 @@
+{
+	"name": "rrazurevm",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
