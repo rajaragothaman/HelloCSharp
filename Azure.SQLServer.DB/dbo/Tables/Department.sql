@@ -1,1 +1,6 @@
-﻿Create table Department (DeptID int identity(1,1) not null , DeptName varchar(50))
+﻿CREATE TABLE [dbo].[Department] (
+    [DeptID]   INT          IDENTITY (1, 1) NOT NULL,
+    [DeptName] VARCHAR (50) NULL,
+    [isActive] BIT          DEFAULT ((0)) NULL
+);
+
