@@ -51,6 +51,189 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Load Trade Table",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Pull csv from nse web site",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "SYMBOL",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SYMBOL",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SERIES",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SERIES",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "OPEN",
+									"type": "String"
+								},
+								"sink": {
+									"name": "OPEN",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HIGH",
+									"type": "String"
+								},
+								"sink": {
+									"name": "HIGH",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOW",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOW",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CLOSE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CLOSE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LAST",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PREVCLOSE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PREVCLOSE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TOTTRDQTY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TOTTRDQTY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TOTTRDVAL",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TOTTRDVAL",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TIMESTAMP",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TIMESTAMP",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TOTALTRADES",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TOTALTRADES",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ISIN",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ISIN",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_DZ__ADLS_NSE_DATA",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_AZURE_SQL_DB_TRADE_INFO",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"annotations": []

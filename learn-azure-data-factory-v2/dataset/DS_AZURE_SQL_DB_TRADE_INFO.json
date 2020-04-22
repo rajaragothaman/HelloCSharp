@@ -1,0 +1,69 @@
+{
+	"name": "DS_AZURE_SQL_DB_TRADE_INFO",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "C_AZURESQLDB_DATA",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "SYMBOL",
+				"type": "varchar"
+			},
+			{
+				"name": "SERIES",
+				"type": "varchar"
+			},
+			{
+				"name": "OPEN",
+				"type": "varchar"
+			},
+			{
+				"name": "HIGH",
+				"type": "varchar"
+			},
+			{
+				"name": "LOW",
+				"type": "varchar"
+			},
+			{
+				"name": "CLOSE",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST",
+				"type": "varchar"
+			},
+			{
+				"name": "PREVCLOSE",
+				"type": "varchar"
+			},
+			{
+				"name": "TOTTRDQTY",
+				"type": "varchar"
+			},
+			{
+				"name": "TOTTRDVAL",
+				"type": "varchar"
+			},
+			{
+				"name": "TIMESTAMP",
+				"type": "varchar"
+			},
+			{
+				"name": "TOTALTRADES",
+				"type": "varchar"
+			},
+			{
+				"name": "ISIN",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "TradeInfo"
+		}
+	}
+}
