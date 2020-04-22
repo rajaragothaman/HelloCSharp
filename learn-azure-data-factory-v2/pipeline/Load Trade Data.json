@@ -83,7 +83,9 @@
 						}
 					},
 					"sink": {
-						"type": "AzureSqlSink"
+						"type": "AzureSqlSink",
+						"preCopyScript": "truncate table tradeinfo",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false
 				},

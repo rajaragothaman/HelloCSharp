@@ -9,7 +9,8 @@
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "HttpServerLocation"
+				"type": "HttpServerLocation",
+				"relativeUrl": "2020/APR/cm21APR2020bhav.csv.zip"
 			},
 			"columnDelimiter": ",",
 			"compressionCodec": "ZipDeflate",
