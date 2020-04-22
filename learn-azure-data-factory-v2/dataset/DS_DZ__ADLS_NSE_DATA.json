@@ -1,0 +1,23 @@
+{
+	"name": "DS_DZ__ADLS_NSE_DATA",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "C_ADLSG2_NSE_DATA",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "trade",
+				"fileSystem": "data"
+			},
+			"columnDelimiter": ",",
+			"compressionCodec": "ZipDeflate",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

@@ -16,8 +16,41 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
 					"enableStaging": false
-				}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_DZ_NSE_DATA",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_DZ__ADLS_NSE_DATA",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"annotations": []
