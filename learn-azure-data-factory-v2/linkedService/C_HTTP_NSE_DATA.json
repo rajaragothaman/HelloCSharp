@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "https://www1.nseindia.com/content/historical/EQUITIES/2020/APR/",
+			"url": "https://www1.nseindia.com/content/historical/EQUITIES",
 			"enableServerCertificateValidation": false,
 			"authenticationType": "Anonymous"
 		}
