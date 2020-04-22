@@ -1,0 +1,19 @@
+{
+	"name": "HelloADF",
+	"properties": {
+		"description": "Simple azure data factory pipelines",
+		"activities": [
+			{
+				"name": "Waiter",
+				"description": "Wait activity to pause the down stream activities execution for defined time ",
+				"type": "Wait",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 10
+				}
+			}
+		],
+		"annotations": []
+	}
+}
