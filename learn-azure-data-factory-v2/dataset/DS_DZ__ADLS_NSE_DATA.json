@@ -10,12 +10,13 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": "info.csv",
 				"folderPath": "trade",
 				"fileSystem": "data"
 			},
 			"columnDelimiter": ",",
-			"compressionCodec": "ZipDeflate",
 			"escapeChar": "\\",
+			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
 		"schema": []
