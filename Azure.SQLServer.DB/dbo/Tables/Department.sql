@@ -1,0 +1,1 @@
+﻿Create table Department (DeptID int identity(1,1) not null , DeptName varchar(50))
