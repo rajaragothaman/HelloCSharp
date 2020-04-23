@@ -90,7 +90,9 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"tableOption": "autoCreate"
+						"preCopyScript": "truncate table Corona_stg",
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false
 				},
@@ -112,7 +114,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"Schema": "dbo",
-							"Table": "Corona"
+							"Table": "Corona_stg"
 						}
 					}
 				]
