@@ -5,13 +5,18 @@
 			"referenceName": "C_ADLSG2_NSE_DATA",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"FileName": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@concat(string(utcnow()) ,'.csv')",
+					"value": "@dataset().FileName",
 					"type": "Expression"
 				},
 				"folderPath": "Corona",

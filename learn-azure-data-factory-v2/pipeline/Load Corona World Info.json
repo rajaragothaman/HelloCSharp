@@ -6,7 +6,14 @@
 			{
 				"name": "Copy CoronaVirus Info",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Set variable1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -41,11 +48,91 @@
 				"outputs": [
 					{
 						"referenceName": "DS_D_CORONA_WORLDWIDE_INFo",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"FileName": {
+								"value": "@variables('FileName')",
+								"type": "Expression"
+							}
+						}
 					}
 				]
+			},
+			{
+				"name": "Load to Azure SQL Table",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Copy CoronaVirus Info",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_D_CORONA_WORLDWIDE_INFo",
+						"type": "DatasetReference",
+						"parameters": {
+							"FileName": {
+								"value": "@variables('FileName')",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_AZURESQLTBL_GENERIC",
+						"type": "DatasetReference",
+						"parameters": {
+							"Schema": "dbo",
+							"Table": "Corona"
+						}
+					}
+				]
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "FileName",
+					"value": ""
+				}
 			}
 		],
+		"variables": {
+			"FileName": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
