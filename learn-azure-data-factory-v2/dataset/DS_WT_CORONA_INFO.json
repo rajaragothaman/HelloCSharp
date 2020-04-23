@@ -9,7 +9,7 @@
 		"type": "WebTable",
 		"schema": [],
 		"typeProperties": {
-			"index": 0
+			"index": 1
 		}
 	}
 }
