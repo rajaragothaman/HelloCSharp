@@ -1,0 +1,6 @@
+{
+	"name": "azurevmis",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
