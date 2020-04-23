@@ -8,7 +8,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Set variable1",
+						"activity": "Set UTCDate",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -118,13 +118,13 @@
 				]
 			},
 			{
-				"name": "Set variable1",
+				"name": "Set UTCDate",
 				"type": "SetVariable",
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
 					"variableName": "FileName",
-					"value": ""
+					"value": "@concat(string(utcnow()) ,'.csv')"
 				}
 			}
 		],
