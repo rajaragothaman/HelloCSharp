@@ -1,0 +1,23 @@
+{
+	"name": "DS_DZ_NSE_DATA",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "C_HTTP_NSE_DATA",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "2020/APR/cm21APR2020bhav.csv.zip"
+			},
+			"columnDelimiter": ",",
+			"compressionCodec": "ZipDeflate",
+			"escapeChar": "\\",
+			"firstRowAsHeader": false,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

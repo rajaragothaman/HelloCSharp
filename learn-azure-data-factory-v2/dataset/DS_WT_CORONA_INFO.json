@@ -1,0 +1,15 @@
+{
+	"name": "DS_WT_CORONA_INFO",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "C_W_WORLDOMETERS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "WebTable",
+		"schema": [],
+		"typeProperties": {
+			"index": 1
+		}
+	}
+}
