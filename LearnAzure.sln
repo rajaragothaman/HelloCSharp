@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloCSharp", "HelloCSharp\
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Azure.SQLServer.DB", "Azure.SQLServer.DB\Azure.SQLServer.DB.sqlproj", "{D25D8A01-150E-4881-B01C-926E3679159E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azure.DataFactory", "Azure.DataFactory\Azure.DataFactory.csproj", "{72F47230-3583-45AE-93C0-5F22BD6572A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{D25D8A01-150E-4881-B01C-926E3679159E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D25D8A01-150E-4881-B01C-926E3679159E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D25D8A01-150E-4881-B01C-926E3679159E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{72F47230-3583-45AE-93C0-5F22BD6572A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72F47230-3583-45AE-93C0-5F22BD6572A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72F47230-3583-45AE-93C0-5F22BD6572A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72F47230-3583-45AE-93C0-5F22BD6572A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
