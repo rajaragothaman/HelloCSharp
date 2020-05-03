@@ -4,13 +4,20 @@
 		"annotations": [],
 		"type": "AzureBlobFS",
 		"typeProperties": {
-			"url": "@{linkedService().uri}"
+			"url": "@{linkedService().uri}",
+			"tenant": "@{linkedService().tenant}"
 		},
 		"parameters": {
 			"uri": {
 				"type": "String"
 			},
 			"sid": {
+				"type": "String"
+			},
+			"skey": {
+				"type": "String"
+			},
+			"tenant": {
 				"type": "String"
 			}
 		}
