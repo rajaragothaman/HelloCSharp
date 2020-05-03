@@ -9,6 +9,9 @@
 		"parameters": {
 			"uri": {
 				"type": "String"
+			},
+			"sid": {
+				"type": "String"
 			}
 		}
 	}
