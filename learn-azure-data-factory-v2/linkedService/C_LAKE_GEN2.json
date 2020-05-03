@@ -1,0 +1,28 @@
+{
+	"name": "C_LAKE_GEN2",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "@{linkedService().uri}",
+			"tenant": "@{linkedService().tenant}",
+			"servicePrincipalId": "@{linkedService().sid}",
+			"servicePrincipalKey": "@{linkedService().skey}"
+		},
+		"parameters": {
+			"uri": {
+				"type": "String"
+			},
+			"sid": {
+				"type": "String"
+			},
+			"skey": {
+				"type": "String"
+			},
+			"tenant": {
+				"type": "String"
+			}
+		}
+	}
+}
