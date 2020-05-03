@@ -5,7 +5,8 @@
 		"type": "AzureBlobFS",
 		"typeProperties": {
 			"url": "@{linkedService().uri}",
-			"tenant": "@{linkedService().tenant}"
+			"tenant": "@{linkedService().tenant}",
+			"servicePrincipalId": "@{linkedService().sid}"
 		},
 		"parameters": {
 			"uri": {
