@@ -4,7 +4,12 @@
 		"annotations": [],
 		"type": "AzureBlobFS",
 		"typeProperties": {
-			"url": "https://rrblobstoragegen2.dfs.core.windows.net"
+			"url": "@{linkedService().uri}"
+		},
+		"parameters": {
+			"uri": {
+				"type": "String"
+			}
 		}
 	}
 }
