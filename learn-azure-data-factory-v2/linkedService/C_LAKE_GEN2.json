@@ -1,0 +1,10 @@
+{
+	"name": "C_LAKE_GEN2",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://rrblobstoragegen2.dfs.core.windows.net"
+		}
+	}
+}
