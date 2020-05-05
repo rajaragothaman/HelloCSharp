@@ -1,0 +1,16 @@
+{
+	"name": "DS_AZURE_SQL_DB_TRADE_INFO_Test",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "C_AZURESQLDB_DATA",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "TradeInfo_Test"
+		}
+	}
+}
