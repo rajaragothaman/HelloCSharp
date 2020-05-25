@@ -76,7 +76,16 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "data/Corona/@{variables('FileName')}"
+					},
+					{
+						"name": "Destination",
+						"value": "@{'dbo'}.@{'Corona_stg'}"
+					}
+				],
 				"typeProperties": {
 					"source": {
 						"type": "DelimitedTextSource",
@@ -126,7 +135,10 @@
 				"userProperties": [],
 				"typeProperties": {
 					"variableName": "FileName",
-					"value": "@concat(string(utcnow()) ,'.csv')"
+					"value": {
+						"value": "@concat(string(utcnow()) ,'.csv')",
+						"type": "Expression"
+					}
 				}
 			}
 		],
